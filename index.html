@@ -10,7 +10,6 @@
     
     <title>Matatus Mapped, v.01</title>
     
-    <script type="text/javascript" src="js/angular.min.js"></script>
     <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHIHBWz2uCkh3L2mufd6ZWUCM9Ps56wCw"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>-->
@@ -67,7 +66,7 @@
   <div class="col-md-3 col-lg-push-9 scrollable sidebar" ng-controller="MapperController as mapper">
     <h2>Select matatu routes</h2>
     <div class="list-group">
-      <a href="#" class="list-group-item" ng-repeat="route in mapper.routes">{{route[1]}}</a>
+      <a href="#" class="list-group-item" ng-repeat="route in mapper.routes">{{route[1]}}: {{route[2]}}</a>
       <a href="#" class="list-group-item active">Porta ac consectetur ac</a>
     </div>
   </div> <!-- /.col-md-3 -->
@@ -83,7 +82,8 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHIHBWz2uCkh3L2mufd6ZWUCM9Ps56wCw"></script>
-
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/apiKey.js"></script>
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/controls.js"></script>
 <script type="text/javascript" src="js/docs.min.js"></script>

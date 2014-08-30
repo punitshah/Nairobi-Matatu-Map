@@ -1,4 +1,3 @@
-//var stops = $.parseJSON(stopsData);
  
 function initialize() {
   var mapOptions = {
