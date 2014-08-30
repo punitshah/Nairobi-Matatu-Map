@@ -15,8 +15,6 @@
       alert("GET request failed");
     });
     
-    //this.
-    
   }]);
   
 })();
