@@ -17,9 +17,12 @@ var API_KEY_URL = "&key=" + API_KEY;
       
       for (var row in data.rows) {
         var rowOutput = { };
-        for (var i in cols)
+        for (var i = 0; i < cols.length; i++) {
           rowOutput[cols[i]] = row[i];
+          //alert(rowOutput[cols[i]].toString);
+        }
         fullOutput.push(rowOutput);
+        //alert (rowOutput.toString());
       }
       
       mapper.routes = fullOutput;*/
