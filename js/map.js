@@ -15,20 +15,53 @@ function initialize() {
     });
   }*/
   
+  var fusionTableId = "1AZcGA39YNhzlGn1AByIVjwF1iymohJhc_-2vv1zR";
+  var locCol = "polyline";
   
   var routeLayer = new google.maps.FusionTablesLayer({
     clickable: true,
     map: map,
     suppressInfoWindows: false,
     query: {
-      select: "polyline",
-      from: "1AZcGA39YNhzlGn1AByIVjwF1iymohJhc_-2vv1zR"
-      //where: "route_short_name = '46'"
+      select: locCol,
+      from: fusionTableId,
+      //where: "route_id = '80200048C11'"
     }
   });
+  
+  google.maps.event.addDomListener(document.getElementById('testbutton'), 'click', function() {      
+      filterRoutes(routeLayer, fusionTableId, locCol, "route_id", "80200048C11");
+  });
+  
+  google.maps.event.addDomListener(document.getElementById('routeIdToFilter'), 'click', function() {      
+      //alert("hi!!");
+      filterRoutes(routeLayer, fusionTableId, locCol, "route_id", document.getElementById('routeIdToFilter').value );
+  });
+  
   
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
+function filterRoutes(routeLayer, fusionTableId, locCol, filterCol, filterVal) {
+  routeLayer.setOptions({
+    query: {
+        select: locCol,
+        from: fusionTableId,
+        where: filterCol + " = '" + filterVal + "'"
+      }
+    });
+  
+}
+
+//}
+
+/*function updateMap () {
+  //alert ("hi!");
+  //todo update query
+  routeLayer.setOptions({
+    query: {
+      where: "route_short_name = '" + route[1] + "'"
+    }*/
+//});

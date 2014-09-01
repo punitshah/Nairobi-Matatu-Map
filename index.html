@@ -65,8 +65,12 @@
 
   <div class="col-md-3 col-lg-push-9 scrollable sidebar" ng-controller="MapperController as mapper">
     <h2>Select matatu routes</h2>
+    <button type="button" id="testbutton" class="btn btn-md btn-primary">test function</button>
+    
+    <input id="routeIdToFilter" value="{{mapper.filterQuery}}">
+    
     <div class="list-group">
-      <a href="#" class="list-group-item" ng-repeat="route in mapper.routes">{{route[1]}}: {{route[2]}}</a>
+      <a href="#" class="list-group-item routefilter" ng-repeat="route in mapper.routes" ng-click="mapper.filter(route[0])" ng-class="{active: route[0]==mapper.filterQuery}">{{route[1]}}: {{route[2]}}</a>
       <a href="#" class="list-group-item active">Porta ac consectetur ac</a>
     </div>
   </div> <!-- /.col-md-3 -->
@@ -83,6 +87,7 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHIHBWz2uCkh3L2mufd6ZWUCM9Ps56wCw"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
+<!--<script type="text/javascript" src="js/angularjs-google-maps.min.js"></script>-->
 <script type="text/javascript" src="js/apiKey.js"></script>
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/controls.js"></script>
