@@ -29,12 +29,7 @@ function initialize() {
     }
   });
   
-  google.maps.event.addDomListener(document.getElementById('testbutton'), 'click', function() {      
-      filterRoutes(routeLayer, fusionTableId, locCol, "route_id", "80200048C11");
-  });
-  
   google.maps.event.addDomListener(document.getElementById('routeIdToFilter'), 'click', function() {      
-      //alert("hi!!");
       filterRoutes(routeLayer, fusionTableId, locCol, "route_id", document.getElementById('routeIdToFilter').value );
   });
   
@@ -42,7 +37,6 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 
 function filterRoutes(routeLayer, fusionTableId, locCol, filterCol, filterVal) {
   routeLayer.setOptions({
@@ -54,14 +48,3 @@ function filterRoutes(routeLayer, fusionTableId, locCol, filterCol, filterVal) {
     });
   
 }
-
-//}
-
-/*function updateMap () {
-  //alert ("hi!");
-  //todo update query
-  routeLayer.setOptions({
-    query: {
-      where: "route_short_name = '" + route[1] + "'"
-    }*/
-//});
