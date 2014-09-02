@@ -1,0 +1,54 @@
+body {
+  background-color: #26b8db;
+  padding-top: 70px;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+.theme-showcase .navbar .container {
+  width: auto;
+}
+/*html { height: 100% }
+body { height: 100%; margin: 0; padding: 0; }*/
+#map-canvas {
+  height: 100%;
+}
+/* fix for gmaps + bootstrap */
+#map-canvas img {
+  width: auto;
+  display: inline;
+}
+#map-canvas label {
+  width: auto;
+  display: inline;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.col-md-9 {
+  height: 100%;
+}
+.container {
+  width: 100%;
+}
+map.col-md-9 {
+  padding: 0;
+}
+.scrollable {
+  height: 100%;
+  overflow: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

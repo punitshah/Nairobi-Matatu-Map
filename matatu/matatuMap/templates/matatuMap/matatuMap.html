@@ -1,0 +1,23 @@
+{% extends "matatuMap/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+	<div class="col-md-3 col-lg-push-9 scrollable sidebar" ng-controller="MapperController as mapper">
+		<h2>Select matatu routes</h2>
+
+		<input id="routeIdToFilter" value="{{mapper.filterQuery}}" ng-show="0">
+
+		<div class="list-group">
+			<a href="#" class="list-group-item routefilter" ng-repeat="route in mapper.routes" ng-click="mapper.filter(route[0])" ng-class="{active: route[0]==mapper.filterQuery}">{{route[1]}}: {{route[2]}}</a>
+		</div>
+	</div> <!-- /.col-md-3 -->
+
+	<!-- TODO: FIX THAT THIS DISAPEARS ON CHANGE TO MOBILE BC OF SCROLLING CLASS FOR SIDEBAR -->
+	<map class="col-md-9 col-lg-pull-3">
+		<div id="map-canvas"></div>
+	</map><!-- /.col-md-9 -->
+
+{% endblock %}
