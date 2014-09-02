@@ -1,3 +1,7 @@
+/* map.js
+ * Map-related functions
+ * Nairobi Matatu Map project
+ */
  
 function initialize() {
   var mapOptions = {
@@ -6,6 +10,7 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   
+  // update following with columns where location information is stored in each Fusion Table if they change
   var routeLocCol = "polyline";
   var stopLocCol = "latitude";
   
@@ -29,6 +34,7 @@ function initialize() {
     }
   });
   
+  // listener for RHS filtering
   google.maps.event.addDomListener(document.getElementById('routeIdToFilter'), 'click', function() {      
     filterRoutes(routeLayer, POLYLINE_TABLE_ID, routeLocCol, "route_id", document.getElementById('routeIdToFilter').value );
     filterRoutes(stopLayer, STOP_TABLE_ID, stopLocCol, "route_id", document.getElementById('routeIdToFilter').value );

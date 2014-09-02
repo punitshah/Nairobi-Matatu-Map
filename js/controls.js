@@ -1,3 +1,8 @@
+/* controls.js
+ * Angular functions
+ * Nairobi Matatu Map project
+ */
+
 var API_KEY_URL = "&key=" + API_KEY;
 
 (function(){
@@ -18,10 +23,6 @@ var API_KEY_URL = "&key=" + API_KEY;
     }).error(function(){
       alert("GET request failed");
     });
-    
-    /*$scope.updateMap (route) {
-      updateMap(route);
-    }*/
     
     mapper.filter = function (query) {
       mapper.filterQuery = query;
