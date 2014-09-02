@@ -11,7 +11,7 @@
 		<input id="routeIdToFilter" value="{{mapper.filterQuery}}" ng-show="0">
 
 		<div class="list-group">
-			<a href="#" class="list-group-item routefilter" ng-repeat="route in mapper.routes" ng-click="mapper.filter(route[0])" ng-class="{active: route[0]==mapper.filterQuery}">{{route[1]}}: {{route[2]}}</a>
+			<a href="#" class="list-group-item routefilter" ng-repeat="route in mapper.routes" ng-click="mapper.filter(route[0])" ng-class="{active: route[0]==mapper.filterQuery}"></a>
 		</div>
 	</div> <!-- /.col-md-3 -->
 
