@@ -6,3 +6,6 @@
  */
 
 var API_KEY = "AIzaSyBHIHBWz2uCkh3L2mufd6ZWUCM9Ps56wCw";
+
+var POLYLINE_TABLE_ID = "1AZcGA39YNhzlGn1AByIVjwF1iymohJhc_-2vv1zR";
+var STOP_TABLE_ID     = "1HXLw1ZwKwD1Wq7KhlPgrRm0yyCIPpwco5_ZrKhM-";

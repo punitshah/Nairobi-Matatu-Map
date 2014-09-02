@@ -6,31 +6,32 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   
-  /*for (var i = 0; i < stops.length; i++) {
-    var myLatlng = new google.maps.LatLng(stops[i][0], stops[i][1]);
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
-    });
-  }*/
-  
-  var fusionTableId = "1AZcGA39YNhzlGn1AByIVjwF1iymohJhc_-2vv1zR";
-  var locCol = "polyline";
+  var routeLocCol = "polyline";
+  var stopLocCol = "latitude";
   
   var routeLayer = new google.maps.FusionTablesLayer({
     clickable: true,
     map: map,
     suppressInfoWindows: false,
     query: {
-      select: locCol,
-      from: fusionTableId,
+      select: routeLocCol,
+      from: POLYLINE_TABLE_ID,
+      //where: "route_id = '80200048C11'"
+    }
+  });
+  
+  var stopLayer = new google.maps.FusionTablesLayer({
+    map: map,
+    query: {
+      select: stopLocCol,
+      from: STOP_TABLE_ID,
       //where: "route_id = '80200048C11'"
     }
   });
   
   google.maps.event.addDomListener(document.getElementById('routeIdToFilter'), 'click', function() {      
-      filterRoutes(routeLayer, fusionTableId, locCol, "route_id", document.getElementById('routeIdToFilter').value );
+    filterRoutes(routeLayer, POLYLINE_TABLE_ID, routeLocCol, "route_id", document.getElementById('routeIdToFilter').value );
+    filterRoutes(stopLayer, STOP_TABLE_ID, stopLocCol, "route_id", document.getElementById('routeIdToFilter').value );
   });
   
   
